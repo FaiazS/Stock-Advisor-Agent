@@ -1,1 +1,1 @@
-# Stock-Advisor-Agent
+# Stock-Advisor-Agent Crew
