@@ -1,0 +1,57 @@
+find_trending_companies:
+
+ description: >
+   Find the top trending publicly listed companies and startups in the news pertaining to
+
+   {sector} by searching the latest recent news and headlines.
+
+   Filter out companies that you not came across before.
+
+ expected_output: >
+
+    A list of trending companies and startups in {sector}.
+
+ agent: company_researcher
+
+ output_file: output/trending_companies_and_startups.json
+
+
+ research_trending_companies:
+
+  description: >
+
+    Given a list of trending companies and startups, perform detailed analysis of each in a report by looking up online.
+
+  expected_output: >
+
+    A report containing the detailed fundamental analysis of each company.
+
+  agent: financial_researcher
+
+  context:
+      - find_trending_companies
+
+  output_file: output/fundamental_analysis_report.json
+
+
+filter_out_best_stock:
+
+  description: >
+    Study and analyze the research findings and pick the best company or startup or even both for short-term and long-term investment.
+
+    Send a push notification to the user with the recommendation and 1 sentence long strong reasoning behind the recommendation.
+
+    Then respond with a detailed report on your thought process of recommending the stock of that particular company or startup and which ones you did not find good or stable.
+
+  expected_output:
+
+     The chosen company's or startup's stock and why you recommended it and the companies or startups which you did not recommend
+
+     and why you did not recommend the stocks of those companies and startups.
+
+  agent: stock_advisor
+
+  context: 
+       - research_trending_companies
+
+  output_file: output/recommended_stock_advice.json
