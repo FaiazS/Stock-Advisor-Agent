@@ -54,7 +54,6 @@ You'll receive a mobile push notification like:
 
 ## 🧠 System flow
 
-
 ```mermaid
 flowchart TD
     A[User runs crewai run] --> B[Agent 1: News Researcher]
@@ -72,6 +71,5 @@ flowchart TD
     I --> J[Agent 5: Notification Agent]
     J -->|Sends to phone| K[Pushover Notification]
 
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style K fill:#bbf,stroke:#333,stroke-width:2px
-
+    classDef dark fill:#000000,stroke:#ffffff,color:#ffffff;
+    class A,B,C,D,E,F,G,H,I,J,K dark;
