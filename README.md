@@ -54,6 +54,7 @@ You'll receive a mobile push notification like:
 
 ## 🧠 System flow
 
+
 ```mermaid
 flowchart TD
     A[User runs crewai run] --> B[Agent 1: News Researcher]
